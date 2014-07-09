@@ -4,7 +4,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="10"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
     
     <uses-feature android:glEsVersion="0x00020000"
@@ -19,6 +19,11 @@
 	<uses-permission android:name="android.permissions.CAMERA" />
 	<uses-feature android:name="android:hardware.camera" />
 	<uses-feature android:name="android.hardware.camera.autofocus" />
+	
+	<permission
+		android:name="info.adamjsmith.permission.MAPS_RECEIVE"
+		android:protectionLevel="signature"/>
+	<uses-permission android:name="info.adamjsmith.permission.MAPS_RECEIVE"/>
 
     <application
         android:allowBackup="true"
@@ -41,7 +46,10 @@
 	    <meta-data
 	    android:name="com.google.android.maps.v2.API_KEY"
 	    android:value="@string/apikey"/>
-    
+	    
+    	<meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version" />
+    	
     </application>
 
 </manifest>

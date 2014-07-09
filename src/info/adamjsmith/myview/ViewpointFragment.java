@@ -1,18 +1,32 @@
 package info.adamjsmith.myview;
 
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.gms.maps.MapFragment;
-
-public class ViewpointFragment extends MapFragment{
+public class ViewpointFragment extends Fragment {
+	
+	MapView mapView;
+	GoogleMap map;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.mapfragment, container, false);
-		return rootView;
+		View v = inflater.inflate(R.layout.mapfragment, container, false);
+		
+		mapView = (MapView) v.findViewById(R.id.mapview);
+		mapView.onCreate(savedInstanceState);
+		
+		map = mapView.getMap();
+		
+		MapsInitializer.initialize(this.getActivity());
+		
+		return v;
 	}
 
 }
