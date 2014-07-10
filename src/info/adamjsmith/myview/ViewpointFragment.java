@@ -28,5 +28,4 @@ public class ViewpointFragment extends Fragment {
 		
 		return v;
 	}
-
 }

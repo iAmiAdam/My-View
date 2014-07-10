@@ -3,10 +3,11 @@
 	    xmlns:tools="http://schemas.android.com/tools"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" 
-	    android:background="@color/blue" >
+	    android:background="@color/grey" >
 	    
-	<com.google.android.gms.maps.MapView android:id="@+id/mapview"
-        android:layout_width="fill_parent" 
-        android:layout_height="fill_parent" />
+	<FrameLayout
+	    android:id="@+id/cameraPreview"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent" />
 	
 </RelativeLayout>
